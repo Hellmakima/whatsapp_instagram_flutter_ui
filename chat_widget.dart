@@ -4,24 +4,28 @@ import 'colors.dart';
 
 List<Chat> chats = [
   Chat(
+    id: 0,
       pfpURL: 'assets/smile.jpg',
       name: 'Sufiyan',
       lastMessage: 'not interested',
       time: 'Now'
   ),
   Chat(
+    id: 1,
       pfpURL: 'assets/puff.jpg',
       name: 'Nimish',
       lastMessage: 'good morning',
       time: '11:11'
   ),
   Chat(
+    id: 2,
       pfpURL: 'assets/surp.jpg',
       name: 'Abhijeet',
       lastMessage: 'I\'m going to the mall',
       time: 'Yesterday'
   ),
   Chat(
+    id: 3,
       pfpURL: 'assets/surp.jpg',
       name: 'Aadesh',
       lastMessage: 'Dart chi assignment pathav',
@@ -68,11 +72,13 @@ class ChatItem extends StatelessWidget {
 }
 
 class Chat {
+  final int id;
   final String pfpURL;
   final String name;
   String lastMessage;
   final String time;
   Chat ({
+    required this.id,
     required this.pfpURL,
     required this.name,
     required this.lastMessage,
