@@ -27,7 +27,7 @@ setup Android studio or VS. make a new project and shove this all in project > l
 dont forget the video_player from #Installations
 make 'assets' folder in project directory.
 in pubspec.yaml add the asset 
-  - assets/
+  - - assets/
 Thats it. Just run it and hope for the best. If the gods of coding are happy with u u should see a running app.
 
 
@@ -49,8 +49,8 @@ Badge of self praise.
 
 ## Code of Conduct (Optional)
 
-GPT: If your project has a code of conduct for contributors, include a link to it in your README.md.
-me: condust it however u like. handcuffed, blind folded, upside down? U name it. I guarentee it wont complain.
+  GPT: If your project has a code of conduct for contributors, include a link to it in your README.md.
+  me: condust it however u like. handcuffed, blind folded, upside down? U name it. I guarentee it wont complain.
 
 ## Conclusion
 
