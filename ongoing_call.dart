@@ -13,46 +13,44 @@ class _OnGoingCallState extends State<OnGoingCall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          color: darkGrey,
-          width: double.infinity,
-          child: Column(
+      body: Container(
+        color: darkGrey,
+        width: double.infinity,
+        child: Column(
 
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20,),
-              Text(
-                'End-to-end encrypted',
-                style: TextStyle(fontSize: 10,color: white),
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 60,),
+            Text(
+              'End-to-end encrypted',
+              style: TextStyle(fontSize: 10,color: white),
+            ),
+            const SizedBox(height: 20,),
+            CircleAvatar(
+              radius: 40,
+              // child: Icon(
+              //   Icons.perm_identity,
+              //   size: 40,
+              // ),
+              backgroundImage: AssetImage(widget.chat.pfpURL),
+            ),
+            const SizedBox(height: 20,),
+            Text(
+              widget.chat.name,
+              style: TextStyle(
+                color: white,
+                fontSize: 40,
               ),
-              const SizedBox(height: 20,),
-              CircleAvatar(
-                radius: 40,
-                // child: Icon(
-                //   Icons.perm_identity,
-                //   size: 40,
-                // ),
-                backgroundImage: AssetImage(widget.chat.pfpURL),
+            ),
+            Text(
+              'Calling',
+              style: TextStyle(
+                color: white,
+                fontSize: 15,
               ),
-              const SizedBox(height: 20,),
-              Text(
-                widget.chat.name,
-                style: TextStyle(
-                  color: white,
-                  fontSize: 40,
-                ),
-              ),
-              Text(
-                'Calling',
-                style: TextStyle(
-                  color: white,
-                  fontSize: 15,
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(

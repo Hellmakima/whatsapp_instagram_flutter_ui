@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'ongoing_call.dart';
 import 'chat_widget.dart';
@@ -90,70 +91,70 @@ class _ChatPageState extends State<ChatPage> {
         ],
       ),
       backgroundColor: darkGrey,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
         children: [
-          Container(
-            // height: 650, //full
-            height: 420, //moto
-            // height: 370, //G 7a
-            child: ListView.builder(
-              padding: const EdgeInsets.all(10),
-              itemCount: a[widget.chat.id]?.length,
-              itemBuilder: (context, index) => Message(
-                  msg: a[widget.chat.id]?[index][0],
-                  sent: a[widget.chat.id]?[index][2],
-                  time: a[widget.chat.id]?[index][1]
-              )
-            ),
+          ListView.builder(
+            padding: const EdgeInsets.all(10),
+            itemCount: a[widget.chat.id]?.length,
+            itemBuilder: (context, index) => Message(
+                msg: a[widget.chat.id]?[index][0],
+                sent: a[widget.chat.id]?[index][2],
+                time: a[widget.chat.id]?[index][1]
+            )
           ),
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(20),
-                // color: lighterGrey,
-                width: 350,
-                height: 100,
-                child: TextField(
-                  controller: _controller,
-                  decoration: InputDecoration(
-                      labelText: 'Send message',
-                      // helperText: AutofillHints.addressCity,
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(
-                            color: Colors.grey,
+          Positioned(
+            bottom: 0,
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(0,0,20,10),
+              color: darkGrey,
+              child: Row(
+                children: [
+                  Container(
+                    width: 350,
+                    height: 80,
+                    padding: const EdgeInsets.all(8),
+                    child: TextField(
+                      controller: _controller,
+                      decoration: InputDecoration(
+                          labelText: 'Send message',
+                          // helperText: AutofillHints.addressCity,
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                              )
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
                           )
                       ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          letterSpacing: 2
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                      onPressed: (){
+                        setState(() {
+                          a[widget.chat.id]?.add([_controller.text,"now",true]);
+                          // widget.chat.lastMessage = _controller.text;
+                          _controller.clear();
+                        });
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(green),
+                      ),
+                      icon: const Icon(
+                        Icons.send,
+                        color: Colors.white,
+                        size: 40,
                       )
-                  ),
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      letterSpacing: 2
-                  ),
-                ),
-              ),
-              IconButton(
-                  onPressed: (){
-                    setState(() {
-                      a[widget.chat.id]?.add([_controller.text,"now",true]);
-                      // widget.chat.lastMessage = _controller.text;
-                      _controller.clear();
-                    });
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(green),
-                  ),
-                  icon: const Icon(
-                    Icons.send,
-                    color: Colors.white,
-                    size: 40,
                   )
-              )
-            ],
+                ],
+              ),
+            ),
           ), // bottom (text editor + send button)
         ],
       ),

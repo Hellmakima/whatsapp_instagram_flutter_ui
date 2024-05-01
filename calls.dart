@@ -3,14 +3,6 @@ import 'chat_widget.dart';
 import 'colors.dart';
 import 'ongoing_call.dart';
 
-void main() {
-  runApp(
-      const MaterialApp(
-        home: CallPage(),
-      )
-  );
-}
-
 class CallPage extends StatefulWidget {
   const CallPage({super.key});
   @override

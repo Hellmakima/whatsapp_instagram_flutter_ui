@@ -4,9 +4,9 @@ import 'package:video_player/video_player.dart';
 import 'colors.dart';
 
 class Post extends StatefulWidget {
-  final String user, caption, postAsset, profileAsset;
+  final String user, caption, postAsset, profileAsset, isVideo;
 
-  const Post({super.key, required this.user, required this.caption, required this.postAsset, required this.profileAsset});
+  const Post({super.key, required this.user, required this.caption, required this.postAsset, required this.profileAsset, required this.isVideo});
 
   @override
   State<Post> createState() => _PostState();
@@ -16,7 +16,7 @@ class _PostState extends State<Post> {
   bool liked = false;
   bool saved = false;
 
-  Icon likeIcon = Icon(Icons.circle_outlined,color: white,size: 35,);
+  Icon likeIcon = Icon(Icons.favorite_border_outlined,color: white,size: 35,);
   Icon saveIcon = Icon(Icons.bookmark_border,color: white,size: 35,);
 
   @override
@@ -41,7 +41,8 @@ class _PostState extends State<Post> {
           ],
         ),
         const SizedBox(height: 15),
-        MyVideo(asset: widget.postAsset),
+        (widget.isVideo == "1")? MyVideo(asset: widget.postAsset):
+            Image.asset("assets/${widget.postAsset}"),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -51,9 +52,9 @@ class _PostState extends State<Post> {
                     onPressed: (){
                       setState(() {
                         if (!liked) {
-                          likeIcon = const Icon(Icons.heart_broken_rounded,color: Colors.red,size: 35,);
+                          likeIcon = const Icon(Icons.favorite,color: Colors.red,size: 35,);
                         } else {
-                          likeIcon = Icon(Icons.circle_outlined,color: white, size: 35,);
+                          likeIcon = Icon(Icons.favorite_border, color: white, size: 35,);
                         }
                         liked = !liked;
                       });
@@ -62,7 +63,8 @@ class _PostState extends State<Post> {
                 ),
                 Icon(Icons.mode_comment_outlined,size: 35,color: white,),
                 const SizedBox(width: 10,),
-                Icon(Icons.send,size: 35,color: white)
+                Transform.rotate(angle: -0.6,
+                child: Icon(Icons.send,size: 35,color: white))
               ],
             ),
             IconButton(
@@ -87,7 +89,7 @@ class _PostState extends State<Post> {
             Text(widget.caption,style: TextStyle(color: white,fontSize: 20)),
           ],
         ),
-        const SizedBox(height: 300,)
+        const SizedBox(height: 20,)
       ],
     );
   }

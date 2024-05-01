@@ -5,28 +5,28 @@ import 'colors.dart';
 List<Chat> chats = [
   Chat(
     id: 0,
-      pfpURL: 'assets/smile.jpg',
+      pfpURL: 'assets/suf.jpeg',
       name: 'Sufiyan',
       lastMessage: 'not interested',
       time: 'Now'
   ),
   Chat(
     id: 1,
-      pfpURL: 'assets/puff.jpg',
+      pfpURL: 'assets/nim.jpeg',
       name: 'Nimish',
       lastMessage: 'good morning',
       time: '11:11'
   ),
   Chat(
     id: 2,
-      pfpURL: 'assets/surp.jpg',
+      pfpURL: 'assets/abhi.jpeg',
       name: 'Abhijeet',
       lastMessage: 'I\'m going to the mall',
       time: 'Yesterday'
   ),
   Chat(
     id: 3,
-      pfpURL: 'assets/surp.jpg',
+      pfpURL: 'assets/adesh.jpg',
       name: 'Aadesh',
       lastMessage: 'Dart chi assignment pathav',
       time: 'Yesterday'

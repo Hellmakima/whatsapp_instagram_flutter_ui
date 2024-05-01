@@ -58,13 +58,34 @@ class _MyAppState extends State<MyApp> {
               size: 28,
             ),
           ),
-          IconButton(
-            onPressed: (){},
+          PopupMenuButton<String>(
+            color: lightGrey,
             icon: Icon(
               Icons.more_vert,
               color: white,
               size: 28,
             ),
+            onSelected: (value) {
+              // Handle menu item selection here
+              switch (value) {
+                case 'Option 1':
+                // Handle Option 1
+                  break;
+                case 'Option 2':
+                // Handle Option 2
+                  break;
+              // Add more cases for other menu items if needed
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return ['New group','New broadcast','Linked Devices','Starred messages','Payments','Settings']
+                  .map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice, style: TextStyle(fontSize: 18,color: white),),
+                );
+              }).toList();
+            },
           ),
         ],
       ),
@@ -75,12 +96,7 @@ class _MyAppState extends State<MyApp> {
         selectedItemColor: green,
         unselectedItemColor: lighterGrey,
         items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.message_outlined,
-              ),
-              label: 'Chats'
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.message_outlined),label: 'Chats'),
           BottomNavigationBarItem(icon: Icon(Icons.video_library),label: 'Reels'),
           BottomNavigationBarItem(icon: Icon(Icons.call),label: 'Calls')
         ],
