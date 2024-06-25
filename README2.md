@@ -4,9 +4,17 @@ Made with chat GPT 3.0
 
 a dart/flutter project to implement whatsapp ui. it contains a page to implement the home page of instagram
 
+## Here's a video
+[!Im still learning .md file making](https://github.com/Hellmakima/whatsapp_instagram_flutter_ui/blob/main/screen-recording.webm?raw=true)
+<video width="320" height="240" controls>
+  <source src="https://github.com/Hellmakima/whatsapp_instagram_flutter_ui/blob/main/screen-recording.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
 ## Table of Contents
 
 - [Installation](#installation)
+- [Features](#features)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -20,6 +28,10 @@ There is a video player dependency. run this:
   ```flutter pub add video_player```
   #pubspec.yaml will update automatically
 
+## Features
+- **Home**: Displays main chat list.
+- **Reels**: Shows video reel content.
+- **Calls**: Manages call functionalities.
 
 ## Usage
 
