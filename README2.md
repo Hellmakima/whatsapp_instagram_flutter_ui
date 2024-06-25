@@ -38,15 +38,15 @@ I alone am the contributing one
 
 I don't know what that is and I don't like it either.
 
-## Additional Sections (Optional)
+## Additional Sections
 
 I choose the option to not write this.
 
-## Badges (Optional)
+## Badges
 
 Badge of self praise.
 
-## Code of Conduct (Optional)
+## Code of Conduct
 
 GPT: If your project has a code of conduct for contributors, include a link to it in your README.md.  me: condust it however u like. handcuffed, blind folded, upside down? U name it. I guarentee it wont complain.
 
